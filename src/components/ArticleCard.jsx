@@ -1,17 +1,23 @@
-export const ArticleCard = () => {
+
+
+export const ArticleCard = ({ title, author, topic, created_at, votes, article_img_url, comment_count }) => {
+    console.log('in articleCard: ',  title);
     return (
-        <div className="articleCard">
-            <h3>title</h3>
-            <section>
-                <p>author</p>
-                <p>topic</p>
-                <p>published</p>
-                <p>votes</p>
+        <li>
+            <section className="articleCard">
+                <h3 className="articleHeading">{title}</h3>
+            
+       
+                    <p className='authorArticleCard'>By {author}</p>
+                    <p className='aboutArticleCard'>About {topic}</p>
+                    <p className="createdAtArticleCard">{created_at}</p>
+                    <p className="votesArticleCard">{votes} votes</p>
+                
+         
+                    <img className="imageArticleCard" src={article_img_url}></img>
+                    <p className="commentCountArticleCard">{comment_count} comments</p>
+           
             </section>
-            <section>
-                <img src="https://images.pexels.com/photos/2403392/pexels-photo-2403392.jpeg?w=700&h=700"></img>
-                <p>comment count</p>
-            </section>
-        </div>
+        </li>
     )
 }
