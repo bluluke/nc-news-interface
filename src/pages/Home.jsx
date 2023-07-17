@@ -4,7 +4,7 @@ export const Home = () => {
     return (
         <div id="home">  
             <Header />
-            <h2>Articles about ...</h2>
+            <h2>All topics</h2>
             <ArticleList />
 
         </div>
