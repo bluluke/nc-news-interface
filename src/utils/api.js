@@ -7,8 +7,8 @@ const articlesApi = axios.create({
 export const getArticles = () => {
     return articlesApi.get("/articles").then((res) => {
         const articleCardProps = res.data.map((article) => {
-            const {title, author, topic, created_at, votes, comment_count} = article; 
-            return {title, author, topic, created_at, votes, comment_count};
+            const {article_id, title, author, topic, created_at, votes, article_img_url, comment_count} = article; 
+            return {article_id, title, author, topic, created_at, votes, article_img_url, comment_count};
         })
         return articleCardProps;
     })
