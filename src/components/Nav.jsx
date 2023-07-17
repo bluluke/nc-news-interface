@@ -1,6 +1,6 @@
 export const Nav = () => {
     return (
-        <nav className="navbar">
+        <nav id="navbar">
             <p>Home</p>
         </nav>
     )
