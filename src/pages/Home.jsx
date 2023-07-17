@@ -1,9 +1,12 @@
+import { ArticleList } from "../components/ArticleList"
+import { Header } from "../components/Header";
 export const Home = () => {
     return (
-        <div>  
-            <h1>NC News</h1>
+        <div id="home">  
+            <Header />
+            <h2>Articles about ...</h2>
+            <ArticleList />
 
-           
         </div>
     )
 }
