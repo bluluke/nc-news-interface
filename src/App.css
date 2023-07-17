@@ -4,8 +4,10 @@
   padding: 2rem;
   text-align: center;
 }
+
 body {
   background-color: rgb(247, 247, 235);
+  color: black;
 }
 
 .navbar {
