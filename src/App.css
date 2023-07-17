@@ -1,9 +1,3 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-} */
 
 * {
   margin-left: 0%;
@@ -14,31 +8,18 @@ body {
   background-color: rgb(247, 247, 235);
   color: black;
 }
-footer {
-  border: 2px solid blue;
-}
+
 
 ul {
   list-style-type: none;
 }
 
-#home h2{
-  border: 2px solid rgb(122, 122, 245);
-}
 #articleList {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  border: 4px solid purple;
 }
 
-#navbar {
-  border: 4px solid blue;
-}
 
-.header {
-  font-size: 0.6rem;
-  border: 6px solid rgba(0, 0, 255, 0.642);
-}
 
 .articleHeading {
   grid-area: articleHeading;
@@ -78,7 +59,8 @@ ul {
              'votesArticleCard commentCountArticleCard';
   width: 80vw;           
   max-width: 300px;           
-  border: 2px solid orange;
+  border: 5px solid orange;
+  background-color: rgb(247, 247, 207);
 }
 
 @media (min-width: 300px) {
