@@ -1,10 +1,15 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
+} */
 
+* {
+  margin-left: 0%;
+  padding-left: 0%;
+  font-size: 1em;
+}
 body {
   background-color: rgb(247, 247, 235);
   color: black;
@@ -13,11 +18,17 @@ footer {
   border: 2px solid blue;
 }
 
+ul {
+  list-style-type: none;
+}
+
 #home h2{
   border: 2px solid rgb(122, 122, 245);
 }
-#articleListContainer {
-  border: 4px solid rgba(255, 166, 0, 0.696);
+#articleList {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  border: 4px solid purple;
 }
 
 .navbar {
@@ -25,9 +36,77 @@ footer {
 }
 
 .header {
+  font-size: 0.6rem;
   border: 6px solid rgba(0, 0, 255, 0.642);
 }
 
+.articleHeading {
+  grid-area: articleHeading;
+  margin-top: 2px;
+}
+.authorArticleCard {
+  grid-area: authorArticleCard;
+}
+.aboutArticleCard {
+  grid-area: aboutArticleCard;
+}
+.createdAtArticleCard {
+  grid-area: createdAtArticleCard;
+}
+.votesArticleCard {
+  grid-area: votesArticleCard;
+}
+.imageArticleCard {
+  grid-area: imageArticleCard;
+  height: 40%;
+  width: 85%;
+  margin-top: 20%;
+
+}
+.commentCountArticleCard {
+  grid-area: commentCountArticleCard;
+}
+
 .articleCard {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  grid-template-areas: 'articleHeading articleHeading'
+             'authorArticleCard imageArticleCard'
+             'aboutArticleCard imageArticleCard'
+             'createdAtArticleCard imageArticleCard'
+             'votesArticleCard commentCountArticleCard';
+  width: 80vw;           
+  max-width: 300px;           
   border: 2px solid orange;
+}
+
+@media (min-width: 300px) {
+  .imageArticleCard {
+    height: 70%;
+  }
+  .header {
+    font-size: 0.8rem;
+  }
+  * {
+    margin-left: 2vw;
+  }
+}
+
+@media (min-width: 460px) {
+  * {
+    max-width: 1280px;
+    text-align: center;
+  }
+}
+
+
+@media (min-width: 810px) {
+
+  #articleList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+    gap: 10px;
+  }
 }
