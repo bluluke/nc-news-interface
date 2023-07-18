@@ -1,7 +1,6 @@
 
 
 export const ArticleCard = ({ title, author, topic, created_at, votes, article_img_url, comment_count }) => {
-    console.log('in articleCard: ',  title);
     return (
         <li>
             <section className="articleCard">
