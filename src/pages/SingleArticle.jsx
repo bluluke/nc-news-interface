@@ -3,16 +3,21 @@ import { useState, useEffect } from 'react';
 import { SingleArticleHeader } from "../components/SingleArticleHeader";
 import { SingleArticleBody } from "../components/SingleArticleBody";
 import { SingleArticleImage } from "../components/SingleArticleImage";
-import { getSingleArticle } from "../utils/api";
+import { CommentsList } from "../components/CommentsList";
+import { getSingleArticle, getComments } from "../utils/api";
 
 export const SingleArticle = () => {
     const { article_id } = useParams();
     const [singleArticleInfo, setSingleArticleInfo] = useState();
     const [isLoading, setIsLoading] = useState(true);
-    
+    const [comments, setComments] = useState(); 
+
     useEffect(() => {  
         getSingleArticle(article_id).then((singleArticleData) => {
             setSingleArticleInfo(singleArticleData);
+        })
+        getComments(article_id).then((comments) => {
+            setComments(comments);
             setIsLoading(false);
         })    
     }, []);
@@ -30,6 +35,7 @@ if(isLoading) return <p>Loading...</p>;
                     comment_count={singleArticleInfo.comment_count}
                     votes={singleArticleInfo.votes}                 
                 />
+                <CommentsList comments={comments}/>
             </div>
     )
                 
