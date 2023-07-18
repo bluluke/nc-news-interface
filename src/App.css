@@ -24,6 +24,13 @@ ul {
 #imageSingleArticle {
   width: 60%;
 }
+#commentListContainer {
+  width: 60%;
+}
+#commentCard {
+  border: 5px solid orange;
+  background-color: rgb(247, 247, 207);
+}
 /* end SingleArticle ids*/
 
 #articleList {
@@ -96,6 +103,9 @@ ul {
   #imageSingleArticle {
     width: 80%;
   }
+  #commentListContainer {
+    width: 80%;
+  }
 }
 
 @media (min-width: 460px) {
@@ -122,6 +132,9 @@ ul {
   }
   #imageSingleArticle {
     width: 90%;
+  }
+  #commentListContainer {
+    width: 85%;
   }
 }
 
