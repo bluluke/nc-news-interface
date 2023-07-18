@@ -33,7 +33,8 @@ if(isLoading) return <p>Loading...</p>;
                     body={singleArticleInfo.body}
                     created_at={singleArticleInfo.created_at} 
                     comment_count={singleArticleInfo.comment_count}
-                    votes={singleArticleInfo.votes}                 
+                    votes={singleArticleInfo.votes}     
+                    article_id={singleArticleInfo.article_id}            
                 />
                 <CommentsList comments={comments}/>
             </div>
