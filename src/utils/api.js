@@ -20,3 +20,8 @@ export const getSingleArticle = (articleId) => {
     })
 }
 
+export const getComments = (articleId) => {
+    return articlesApi.get(`/articles/${articleId}/comments`).then((res) => {
+    return res.data.comments;
+    })
+}
