@@ -13,3 +13,10 @@ export const getArticles = () => {
         return articleCardProps;
     })
 }
+
+export const getSingleArticle = (articleId) => {
+    return articlesApi.get(`/articles/${articleId}`).then((res) => {
+        return res.data;
+    })
+}
+
