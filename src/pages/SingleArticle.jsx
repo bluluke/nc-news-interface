@@ -9,10 +9,10 @@ export const SingleArticle = () => {
     const { article_id } = useParams();
     const [singleArticleInfo, setSingleArticleInfo] = useState();
     const [isLoading, setIsLoading] = useState(true);
-
+    
     useEffect(() => {  
         getSingleArticle(article_id).then((singleArticleData) => {
-            setSingleArticleInfo(singleArticleData[0]);
+            setSingleArticleInfo(singleArticleData);
             setIsLoading(false);
         })    
     }, []);

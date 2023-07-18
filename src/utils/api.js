@@ -16,7 +16,7 @@ export const getArticles = () => {
 
 export const getSingleArticle = (articleId) => {
     return articlesApi.get(`/articles/${articleId}`).then((res) => {
-        return res.data;
+        return res.data[0];
     })
 }
 
