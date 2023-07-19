@@ -5,6 +5,7 @@ import { SingleArticleBody } from "../components/SingleArticleBody";
 import { SingleArticleImage } from "../components/SingleArticleImage";
 import { CommentsList } from "../components/CommentsList";
 import { getSingleArticle, getComments } from "../utils/api";
+import { CommentAdder } from "../components/CommentAdder";
 
 export const SingleArticle = () => {
     const { article_id } = useParams();
@@ -36,6 +37,7 @@ if(isLoading) return <p>Loading...</p>;
                     votes={singleArticleInfo.votes}     
                     article_id={singleArticleInfo.article_id}            
                 />
+                <CommentAdder article_id={article_id} setComments={setComments}/>
                 <CommentsList comments={comments}/>
             </div>
     )
