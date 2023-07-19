@@ -37,3 +37,32 @@ export const patchVote = (articleId) => {
         return data.article[0];
     });
 }
+
+export const postComment = (newComment, articleId, user) => {
+    const postRequestBody = {
+        username: user,
+        body: newComment
+       };
+    return articlesApi.post(`/articles/${articleId}/comments`,postRequestBody)
+    .then(({data}) => {
+        return data.comment[0];
+    });   
+};
+
+
+export const trackCharacters = (currentLength, maxLength) => {
+    let message = '';
+    const difference = maxLength - currentLength;
+    if(difference === 1) {
+        message =`1 character remaining`
+       } 
+   else if(difference >= 2 || difference === 0) {
+    message = `${difference} characters remaining`
+   }
+   else if(difference === -1) {
+    message = `1 character over the limit`
+   } else {
+    message = `${currentLength - maxLength} characters over the limit`
+   }
+    return message;
+}
