@@ -9,11 +9,11 @@ export const getArticles = (topic, sortByOrder) => {
     let endpoint = `/articles`;
     if(topic !== 'all') {
         endpoint+=`?topic=${topic}`;
-        if(sortByOrder !== '') {
+        if(sortByOrder !== null) {
             endpoint+=`&&${sortByOrder}`
         }
     } else {
-        if(sortByOrder !== '') {
+        if(sortByOrder !== null) {
             endpoint+=`?${sortByOrder}`
         }
     } 
@@ -99,3 +99,18 @@ export const getTopicToFetch = (currentTopic, currentLocation) => {
 export const capitaliseFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+
+export const getSortByOrder = (currentLocation) => {
+    const urlSearchParams = new URLSearchParams(currentLocation.search);
+    const sortBy = urlSearchParams.get('sort_by');
+    const order = urlSearchParams.get('order');
+    let sortByOrder;
+    if(sortBy === null || order === null) {
+        sortByOrder = null;
+    } else {
+        sortByOrder = `sort_by=${sortBy}&&order=${order}`
+    }
+    return sortByOrder;
+}
+
