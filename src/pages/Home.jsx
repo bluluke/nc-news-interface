@@ -60,7 +60,7 @@ if(isLoading) return <p>Loading...</p>;
             <button>Search</button>
             </form>
             <ArticleList currentTopic={currentTopic} currentLocation={currentLocation}/>
-
+            <ArticleListHeading currentTopic={currentTopic} currentLocation={currentLocation}/>
         </div>
     )
 }
