@@ -1,22 +1,28 @@
 import { Link } from "react-router-dom";
 import { ArticleCard } from "./ArticleCard"
 import { useEffect, useState } from 'react';
-import { getArticles, getTopicToFetch } from "../utils/api";
+import { getArticles, getTopicToFetch, getSortByOrder } from "../utils/api";
 
 export const ArticleList = ({currentTopic, currentLocation}) => {
 
 const [articleCards, setArticleCards] = useState();
 const [isLoading, setIsloading] = useState(true); 
 
+
 useEffect(() => {
     setIsloading(true);
+    const getSortByOrderResult = getSortByOrder(currentLocation);
     const topicToFetch = getTopicToFetch(currentTopic, currentLocation);
 
-    getArticles(topicToFetch).then((articleData) => {
+    getArticles(topicToFetch, getSortByOrderResult).then((articleData) => {
         setArticleCards(articleData);
         setIsloading(false);
     })
 }, [currentLocation]);
+
+
+
+
 
 if(isLoading) return <p>Loading...</p>;
     return (

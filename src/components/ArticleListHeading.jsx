@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { capitaliseFirstLetter } from "../utils/api";
 
 export const ArticleListHeading = ({ currentTopic, currentLocation }) => {
-    const [currentArtListHeading, setCurrentArtListHeading] = useState(capitaliseFirstLetter(currentTopic));
+    const [currentArtListHeading, setCurrentArtListHeading] = useState(currentTopic);
 
     useEffect(() => {
         const articleListHeading = getTopicToFetch(currentTopic, currentLocation);
