@@ -4,8 +4,14 @@ const articlesApi = axios.create({
     baseURL: "https://nc-news-api-tpln.onrender.com/api"
 });
 
-export const getArticles = () => {
-    return articlesApi.get("/articles").then((res) => {
+export const getArticles = (topic) => {
+    let endpoint;
+    if(topic === 'all') {
+        endpoint = "/articles";
+    } else {
+       endpoint = `/articles?topic=${topic}`;
+    } 
+    return articlesApi.get(endpoint).then((res) => {
         const articleCardProps = res.data.map((article) => {
             const {article_id, title, author, topic, created_at, votes, article_img_url, comment_count} = article; 
             return {article_id, title, author, topic, created_at, votes, article_img_url, comment_count};
@@ -13,6 +19,7 @@ export const getArticles = () => {
         return articleCardProps;
     })
 }
+
 
 export const getSingleArticle = (articleId) => {
     return articlesApi.get(`/articles/${articleId}`).then((res) => {
@@ -65,4 +72,24 @@ export const trackCharacters = (currentLength, maxLength) => {
     message = `${currentLength - maxLength} characters over the limit`
    }
     return message;
+}
+
+export const getTopics = () => {
+    return articlesApi.get('/topics').then((res) => {
+        const topics = res.data.map((topic) => {
+            return topic.slug;
+        })
+        return topics;
+    })
+}
+
+export const getTopicToFetch = (currentTopic, currentLocation) => {
+    const urlSearchParams = new URLSearchParams(currentLocation.search);
+    const topicParam = urlSearchParams.get('topic');
+    return topicParam || currentTopic;
+}
+
+
+export const capitaliseFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
