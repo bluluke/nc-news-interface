@@ -74,3 +74,22 @@ export const trackCharacters = (currentLength, maxLength) => {
     return message;
 }
 
+export const getTopics = () => {
+    return articlesApi.get('/topics').then((res) => {
+        const topics = res.data.map((topic) => {
+            return topic.slug;
+        })
+        return topics;
+    })
+}
+
+export const getTopicToFetch = (currentTopic, currentLocation) => {
+    const urlSearchParams = new URLSearchParams(currentLocation.search);
+    const topicParam = urlSearchParams.get('topic');
+    return topicParam || currentTopic;
+}
+
+
+export const capitaliseFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
