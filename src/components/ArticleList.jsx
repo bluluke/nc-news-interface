@@ -3,7 +3,7 @@ import { ArticleCard } from "./ArticleCard"
 import { useEffect, useState } from 'react';
 import { getArticles, getTopicToFetch } from "../utils/api";
 
-export const ArticleList = ({currentTopic, currentLocation}) => {
+export const ArticleList = ({currentTopic, currentLocation, sortByOrder}) => {
 
 const [articleCards, setArticleCards] = useState();
 const [isLoading, setIsloading] = useState(true); 
@@ -12,7 +12,7 @@ useEffect(() => {
     setIsloading(true);
     const topicToFetch = getTopicToFetch(currentTopic, currentLocation);
 
-    getArticles(topicToFetch).then((articleData) => {
+    getArticles(topicToFetch, sortByOrder).then((articleData) => {
         setArticleCards(articleData);
         setIsloading(false);
     })

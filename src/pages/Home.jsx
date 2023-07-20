@@ -10,7 +10,8 @@ export const Home = () => {
     const [topics, setTopics] = useState();
     const [currentTopic, setCurrentTopic] = useState('all')
     const [isLoading, setIsLoading] = useState(true);
-    const navigate = useNavigate();
+    const [sortByOrder, setSortByOrder ] = useState('')
+;    const navigate = useNavigate();
     const currentLocation = useLocation();
   
 
@@ -59,7 +60,7 @@ if(isLoading) return <p>Loading...</p>;
             })}
             <button>Search</button>
             </form>
-            <ArticleList currentTopic={currentTopic} currentLocation={currentLocation}/>
+            <ArticleList currentTopic={currentTopic} currentLocation={currentLocation} sortByOrder={sortByOrder}/>
             <ArticleListHeading currentTopic={currentTopic} currentLocation={currentLocation}/>
         </div>
     )

@@ -4,12 +4,18 @@ const articlesApi = axios.create({
     baseURL: "https://nc-news-api-tpln.onrender.com/api"
 });
 
-export const getArticles = (topic) => {
-    let endpoint;
-    if(topic === 'all') {
-        endpoint = "/articles";
+export const getArticles = (topic, sortByOrder) => {
+
+    let endpoint = `/articles`;
+    if(topic !== 'all') {
+        endpoint+=`?topic=${topic}`;
+        if(sortByOrder !== '') {
+            endpoint+=`&&${sortByOrder}`
+        }
     } else {
-       endpoint = `/articles?topic=${topic}`;
+        if(sortByOrder !== '') {
+            endpoint+=`?${sortByOrder}`
+        }
     } 
     return articlesApi.get(endpoint).then((res) => {
         const articleCardProps = res.data.map((article) => {
