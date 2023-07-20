@@ -136,7 +136,7 @@ if(isLoading) return <p>Loading...</p>;
             <button type="submit">Search</button>
             </form>
             <ArticleListHeading currentTopic={currentTopic} currentLocation={currentLocation}/>
-            <ArticleList currentTopic={currentTopic} currentLocation={currentLocation} sortByOrder={sortByOrder} setSortByOrder={setSortByOrder}/>
+            <ArticleList currentTopic={currentTopic} currentLocation={currentLocation}/>
         </div>
     )
 }
