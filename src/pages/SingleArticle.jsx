@@ -38,7 +38,7 @@ if(isLoading) return <p>Loading...</p>;
                     article_id={singleArticleInfo.article_id}            
                 />
                 <CommentAdder article_id={article_id} setComments={setComments}/>
-                <CommentsList comments={comments}/>
+                <CommentsList comments={comments} setComments={setComments}/>
             </div>
     )
                 
