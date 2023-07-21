@@ -1,9 +1,8 @@
-export const Error = () => {
+export const Error = ({errorStatus, errorMessage}) => {
     return (
         <div className="error">
-            <p className="error-status">404</p>
-            <p className="error-text">Not found: Page does not exist</p>
+            <p>{errorStatus}</p>
+            <p>{errorMessage}</p>
         </div>
     )
 }
-
