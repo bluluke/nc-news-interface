@@ -30,16 +30,20 @@ const handleSubmit = (e) => {
 
 
     return <form className="commentAdder" onSubmit={handleSubmit}>
-        <label htmlFor="new-comment">Write your comment below</label> <br></br>
-        <textarea 
-            id="new-comment" 
-            value={newComment} 
-            onChange={(e) => {
-                setNewComment(e.target.value)
-            }}
-        />
-        <button disabled={newComment.length > 50 || newComment.length === 0} >Submit</button>
-      <p>{characterMessage}</p>
-        {isError ? <p>There was a problem posting the comment. Comment not posted.</p> : null}
+        {userForPost.user ? 
+            <div>
+                <label htmlFor="new-comment">Write your comment below</label> <br></br>
+                <textarea 
+                    id="new-comment" 
+                    value={newComment} 
+                    onChange={(e) => {
+                        setNewComment(e.target.value)
+                    }}
+                />
+                <button disabled={newComment.length > 50 || newComment.length === 0} >Submit</button>
+                <p>{characterMessage}</p>
+                {isError ? <p>There was a problem posting the comment. Comment not posted.</p> : null}
+            </div>
+            : <p id="logInToComment">Log in to comment</p>}
     </form>
 }

@@ -42,6 +42,15 @@ ul {
   margin-top: 50px;
 }
 
+#logInToComment {
+  font-size: 2rem;
+  color: green;
+}
+
+.error {
+  font-size: 2.5rem;
+  color: red;
+}
 .header {
   font-size: 0.6rem;
 }
