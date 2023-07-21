@@ -3,7 +3,8 @@ import { ArticleCard } from "./ArticleCard"
 import { useEffect, useState } from 'react';
 import { getArticles, getTopicToFetch, getSortByOrder } from "../utils/api";
 
-export const ArticleList = ({currentTopic, currentLocation}) => {
+
+export const ArticleList = ({currentTopic, currentLocation, setApiError}) => {
 
 const [articleCards, setArticleCards] = useState();
 const [isLoading, setIsloading] = useState(true); 
@@ -14,15 +15,15 @@ useEffect(() => {
     const getSortByOrderResult = getSortByOrder(currentLocation);
     const topicToFetch = getTopicToFetch(currentTopic, currentLocation);
 
-    getArticles(topicToFetch, getSortByOrderResult).then((articleData) => {
+    getArticles(topicToFetch, getSortByOrderResult)
+    .then((articleData) => {
         setArticleCards(articleData);
         setIsloading(false);
     })
+    .catch((error) => {
+        setApiError(error)
+    })
 }, [currentLocation]);
-
-
-
-
 
 if(isLoading) return <p>Loading...</p>;
     return (
@@ -37,11 +38,6 @@ if(isLoading) return <p>Loading...</p>;
         </section>
     )
 }
-
-
-
-
-
 
 
 

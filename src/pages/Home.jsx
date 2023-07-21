@@ -5,36 +5,33 @@ import { Header } from "../components/Header";
 import { getTopics } from "../utils/api";
 import { ArticleListHeading } from '../components/ArticleListHeading';
 
-export const Home = () => {
+export const Home = ({setApiError}) => {
 
     const [topics, setTopics] = useState();
     const [currentTopic, setCurrentTopic] = useState('all')
     const [isLoading, setIsLoading] = useState(true);
-    const [sortByOrder, setSortByOrder ] = useState(null)
-;    const navigate = useNavigate();
+    const [sortByOrder, setSortByOrder ] = useState(null);
+
+    const navigate = useNavigate();
     const currentLocation = useLocation();
   
-
     useEffect(() => {
         getTopics().then((topicsData) => {
             setTopics(topicsData);
             setIsLoading(false);
-        });
+        })
     }, []);
-
-    
+  
 const handleSubmit = (e) => {
     e.preventDefault();
     navigate(`/?topic=${currentTopic}&&${sortByOrder}`);
 }
-
 const handleTopicChange = (e) => {
     setCurrentTopic(e.target.value);
 };
 const handleSortOrderChange = (e) => {
     setSortByOrder(e.target.value)
 }
-
 
 
 if(isLoading) return <p>Loading...</p>;
@@ -136,8 +133,7 @@ if(isLoading) return <p>Loading...</p>;
             <button type="submit">Search</button>
             </form>
             <ArticleListHeading currentTopic={currentTopic} currentLocation={currentLocation}/>
-            <ArticleList currentTopic={currentTopic} currentLocation={currentLocation}/>
+            <ArticleList currentTopic={currentTopic} currentLocation={currentLocation} setApiError={setApiError}/>
         </div>
     )
 }
-

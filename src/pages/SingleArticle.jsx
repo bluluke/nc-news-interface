@@ -7,7 +7,7 @@ import { CommentsList } from "../components/CommentsList";
 import { getSingleArticle, getComments } from "../utils/api";
 import { CommentAdder } from "../components/CommentAdder";
 
-export const SingleArticle = () => {
+export const SingleArticle = ({ setApiError}) => {
     const { article_id } = useParams();
     const [singleArticleInfo, setSingleArticleInfo] = useState(null);  
     
@@ -21,6 +21,10 @@ export const SingleArticle = () => {
         getComments(article_id).then((comments) => {
             setComments(comments);
             setIsLoading(false);
+        })
+        .catch((error) => {
+            setApiError(error)
+            console.log('in here', error);
         })    
     }, []);
 
