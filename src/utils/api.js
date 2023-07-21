@@ -114,3 +114,7 @@ export const getSortByOrder = (currentLocation) => {
     return sortByOrder;
 }
 
+export const deleteComment = (commentId) => {
+   return articlesApi.delete(`/comments/${commentId}`).then((res) => { 
+   })
+}

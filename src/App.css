@@ -8,8 +8,6 @@ body {
   background-color: rgb(247, 247, 235);
   color: black;
 }
-
-
 ul {
   list-style-type: none;
 }
@@ -47,7 +45,6 @@ ul {
 .header {
   font-size: 0.6rem;
 }
-
 .articleHeading {
   grid-area: articleHeading;
   margin-top: 2px;
@@ -69,12 +66,10 @@ ul {
   height: 40%;
   width: 85%;
   margin-top: 20%;
-
 }
 .commentCountArticleCard {
   grid-area: commentCountArticleCard;
 }
-
 .articleCard {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -89,6 +84,14 @@ ul {
   border: 5px solid orange;
   background-color: rgb(247, 247, 207);
   color: black;
+}
+
+.toastBody {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: red;
+  border: 5px solid orange;
+  background-color: rgb(247, 247, 207);
 }
 
 @media (min-width: 300px) {

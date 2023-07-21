@@ -1,6 +1,6 @@
 import { CommentCard } from "./CommentCard";
 
-export const CommentsList = ({ comments }) => {
+export const CommentsList = ({ comments, setComments }) => {
 
     return (
         <section id="commentListContainer">
@@ -12,6 +12,8 @@ export const CommentsList = ({ comments }) => {
                                 created_at={created_at} 
                                 body={body}
                                 votes={votes}    
+                                comment_id={comment_id}
+                                setComments={setComments}
                             />
                 })}
             </ul>
