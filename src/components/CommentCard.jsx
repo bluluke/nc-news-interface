@@ -15,9 +15,8 @@ export const CommentCard = ({author, created_at, body, votes, comment_id, setCom
 
     useEffect(() => {
         if(isClicked) {
-           optimisticDeleteComment(commentIdToDelete)
         deleteComment(commentIdToDelete).then(() => {
-
+            optimisticDeleteComment(commentIdToDelete) 
         })
         .catch((err) => {
             handleError()   
@@ -36,7 +35,6 @@ export const CommentCard = ({author, created_at, body, votes, comment_id, setCom
         setIsClicked(true);
      }
     const optimisticDeleteComment = (commentIdToDelete) => {
-        console.log('first part');
         setComments((currentComments) => 
             currentComments.filter((comment) => comment.comment_id !== commentIdToDelete)
         );
