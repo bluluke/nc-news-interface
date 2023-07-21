@@ -13,26 +13,22 @@ export const CommentCard = ({author, created_at, body, votes, comment_id, setCom
     const [isClicked, setIsClicked] = useState(false);
   
 
-    useEffect(() => {
-        if(isClicked) {
-        deleteComment(commentIdToDelete).then(() => {
-            optimisticDeleteComment(commentIdToDelete) 
-        })
-        .catch((err) => {
-            handleError()   
-        })
-        }
-    }, [isClicked])
-
-
     const handleError = () => {   
         toast("There was a problem. Comment was not deleted.", {
             position: "top-center",
             bodyClassName: 'toastBody',
         });
     };
-    const handleDeleteClick = (event) => {
-        setIsClicked(true);
+    const handleDeleteClick = () => {
+         setIsClicked(true);
+        deleteComment(commentIdToDelete).then(() => {
+            optimisticDeleteComment(commentIdToDelete) 
+            setIsClicked(false)
+        })
+        .catch((err) => {
+            handleError()   
+            setIsClicked(false)
+        })
      }
     const optimisticDeleteComment = (commentIdToDelete) => {
         setComments((currentComments) => 
@@ -47,10 +43,20 @@ export const CommentCard = ({author, created_at, body, votes, comment_id, setCom
                 <p id="createdAtCommentCard">{new Date(created_at).toLocaleDateString()}</p>
                 <p id="bodyCommentCard">{body}</p>
                 <p id="votesCommentCard">{votes} votes</p>
+                {isClicked === true ?
+                <p>Comment delete in progress...</p>
+                : null
+                }
                 {author === userForCommentDelete.user ? 
-                <button value={comment_id} onClick={(handleDeleteClick)}>Delete Comment</button> 
+                <button value={comment_id} onClick={(handleDeleteClick)} disabled={isClicked===true}>Delete Comment</button> 
                 : null}
             </section>
         </li>
     )
 }
+
+
+
+
+
+
