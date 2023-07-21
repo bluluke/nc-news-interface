@@ -4,6 +4,7 @@ import { Nav } from './components/Nav'
 import { Home } from './pages/Home'
 import { SingleArticle } from './pages/SingleArticle';
 import { Footer } from './components/Footer';
+import { Error } from './components/Error'
 function App() {
  
 
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </>
