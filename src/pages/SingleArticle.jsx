@@ -9,7 +9,8 @@ import { CommentAdder } from "../components/CommentAdder";
 
 export const SingleArticle = () => {
     const { article_id } = useParams();
-    const [singleArticleInfo, setSingleArticleInfo] = useState();
+    const [singleArticleInfo, setSingleArticleInfo] = useState(null);  
+    
     const [isLoading, setIsLoading] = useState(true);
     const [comments, setComments] = useState(); 
 
@@ -23,7 +24,7 @@ export const SingleArticle = () => {
         })    
     }, []);
 
-if(isLoading) return <p>Loading...</p>;
+if(isLoading || singleArticleInfo === null) return <p>Loading...</p>;
     return (
         <div id="singleArticle">
                 <SingleArticleHeader title={singleArticleInfo.title}/>  
