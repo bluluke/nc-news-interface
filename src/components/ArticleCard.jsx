@@ -1,6 +1,7 @@
 
 
 export const ArticleCard = ({ title, author, topic, created_at, votes, article_img_url, comment_count }) => {
+    const formattedDate = new Date(created_at).toLocaleDateString();
     return (
         <li>
             <section className="articleCard">
@@ -9,7 +10,7 @@ export const ArticleCard = ({ title, author, topic, created_at, votes, article_i
        
                     <p className='authorArticleCard'>By {author}</p>
                     <p className='aboutArticleCard'>About {topic}</p>
-                    <p className="createdAtArticleCard">{created_at}</p>
+                    <p className="createdAtArticleCard">{formattedDate}</p>
                     <p className="votesArticleCard">{votes} votes</p>
                 
          
