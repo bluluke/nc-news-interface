@@ -39,8 +39,8 @@ if(isLoading) return <p>Loading...</p>;
         <div id="home">  
             <Header />
             <form id="topicInput" onSubmit={handleSubmit}>
-                <fieldset>
-                    <legend>sort articles:</legend>
+                <fieldset id="sortFieldset">
+                    <legend>Sort Articles by:</legend>
                     <div>
                         <input
                         type="radio"
@@ -49,7 +49,7 @@ if(isLoading) return <p>Loading...</p>;
                         value="sort_by=votes&&order=desc"
                         onChange={handleSortOrderChange}
                         />   
-                        <label htmlFor="votes_desc">most votes to fewest votes</label>
+                        <label htmlFor="votes_desc">votes (most first)</label>
                     </div>
                     <div>
                         <input
@@ -59,7 +59,7 @@ if(isLoading) return <p>Loading...</p>;
                         value="sort_by=votes&&order=asc"
                         onChange={handleSortOrderChange}
                         />
-                        <label htmlFor="votes_asc">fewest votes to most votes</label>
+                        <label htmlFor="votes_asc">votes (fewest first)</label>
                     </div>
                     <div>
                         <input
@@ -69,7 +69,7 @@ if(isLoading) return <p>Loading...</p>;
                         value="sort_by=comment_count&&order=desc"
                         onChange={handleSortOrderChange}
                         />   
-                        <label htmlFor="comments_desc">most comments to fewest comments</label>
+                        <label htmlFor="comments_desc">comments (most first)</label>
                     </div>
                     <div>
                         <input
@@ -79,7 +79,7 @@ if(isLoading) return <p>Loading...</p>;
                         value="sort_by=comment_count&&order=asc"
                         onChange={handleSortOrderChange}
                         />   
-                        <label htmlFor="comments_asc">fewest comments to most comments</label>
+                        <label htmlFor="comments_asc">comments (fewest first)</label>
                     </div>
                     <div>
                         <input
@@ -89,7 +89,7 @@ if(isLoading) return <p>Loading...</p>;
                         value="sort_by=created_at&&order=desc"
                         onChange={handleSortOrderChange}
                         />   
-                        <label htmlFor="created_at_desc">most recent to least recent</label>
+                        <label htmlFor="created_at_desc">most recent first</label>
                     </div>
                     <div>
                         <input
@@ -99,11 +99,11 @@ if(isLoading) return <p>Loading...</p>;
                         value="sort_by=created_at&&order=asc"
                         onChange={handleSortOrderChange}
                         />   
-                        <label htmlFor="created_at_asc">least recent to most recent</label>
+                        <label htmlFor="created_at_asc">least recent first</label>
                     </div>
                 </fieldset>
-                <fieldset>
-                <legend>article topics:</legend>    
+                <fieldset id="topicsFieldset">
+                <legend>Article Topics:</legend>    
                 <div>
                     <input
                         type='radio'
@@ -130,7 +130,7 @@ if(isLoading) return <p>Loading...</p>;
 
                 })}
                 </fieldset>
-            <button type="submit">Search</button>
+            <button type="submit" id='searchSubmit'>Search</button>
             </form>
             <ArticleListHeading currentTopic={currentTopic} currentLocation={currentLocation}/>
             <ArticleList currentTopic={currentTopic} currentLocation={currentLocation} setApiError={setApiError}/>
