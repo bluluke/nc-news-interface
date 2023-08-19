@@ -92,6 +92,15 @@ fieldset {
   color: black; 
   max-width: 450px;
 }
+.articleCard:hover {
+  border-color: rgb(215, 140, 0);
+  background-color: rgb(243, 243, 0);
+}
+.articleCard:active {
+  background-color: black;
+  color: white;
+  border-color: white;
+}
 .aboutArticleCard {
   margin-bottom: 0;
 }
