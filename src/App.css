@@ -3,6 +3,7 @@
   font-family: 'Fira Sans', sans-serif;
 }
 body {
+  border: 3px solid green;
   display: flex;
   justify-content: center;
   margin-left: 0;
@@ -14,13 +15,14 @@ body {
   font-size: 2.5rem;
   color: red;
 }
-
 #navbar, #footer{
   text-align: center;
   margin: 1rem;
   font-size: 1.5rem;
 }
-
+#footer {
+  margin-bottom: 2rem;
+}
 #home {
   display: flex;
   flex-direction: column;
@@ -55,10 +57,11 @@ fieldset {
   background-color: #007bff;
   border-color: #007bff;
   border-radius: 10%;
-  margin-left: 10%;
+  margin-left: 24%;
   margin-right: 10%;
   margin-bottom: 0.8rem;
-  height: 2.5rem
+  height: 2.5rem;
+  width: 7rem;
 }
 #searchSubmit:hover {
   background-color: #0056b3;
@@ -98,11 +101,6 @@ fieldset {
    margin-top: 1.2rem;  
 }
 
-
-
-
-
-
 /* SingleArticle ids */
 #singleArticle {
   display: flex;
@@ -112,8 +110,9 @@ text-align: center;
 }
 #headerSingleArticle {
   font-size: 0.7rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1.7rem;
+  padding-right: 1.7rem;
+  width: 70%;
 }
 #addVoteButton, #deleteCommentButton, #submitButton {
   height: 2.2rem;
@@ -154,6 +153,14 @@ text-align: center;
   border: 5px solid orange;
   background-color: rgb(247, 247, 207);
   padding: 1.7rem;
+  margin-bottom: 5px;;
+}
+.topInfoCommentCard {
+  border-bottom: 3px solid orange;
+}
+.bodyCommentCard{
+  border-bottom: 3px double black;
+  padding-bottom: 1rem;
 }
 #deleteCommentButton {
   border-radius: 10%;
@@ -170,6 +177,9 @@ text-align: center;
   border-color:#fff;
 }
 #commentInputContainer {
+  border: 3px solid black;
+  color: black;
+  background-color: orange;
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
@@ -202,7 +212,11 @@ text-align: center;
   color: green;
 }
 /* end SingleArticle ids*/
-
+@media (min-width: 300px) {
+  #headerSingleArticle {
+    width:80%;
+  }
+}
 @media (min-width: 420px) {
   #singleArticleBody {
     display: flex;
@@ -272,6 +286,7 @@ text-align: center;
     grid-area: commentCountArticleCard;
   }
   #topicInput {
+    border: 3px solid #000000;
     display: grid;
     padding: 1rem;
     grid-template-columns: 25% 25% 25% 25%;
@@ -295,8 +310,12 @@ text-align: center;
     grid-area: searchSubmit;
       margin-left: 10%;
       margin-top: 5%;
-      width: 10.7rem;
+      width: 9rem;
+      font-size: 1.2rem;
   }
+   #headerSingleArticle {
+      width:90%;
+    }
 }
 @media (min-width: 460px) {
   #addVoteButton {
@@ -330,7 +349,6 @@ text-align: center;
     margin-left: 1.8rem;
   }
 }
- 
 @media (min-width: 590px) {
   .header, #headerSingleArticle  {
     font-size: 120%;
@@ -359,7 +377,7 @@ text-align: center;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 0.4rem;
+    margin-top: 0.6rem;
     height: 1.7rem;
   }
   #submitButton {
@@ -372,6 +390,7 @@ text-align: center;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end; 
+    margin-top: 1.1rem;
   }
   #characterCountMessage {
     grid-area: characterCountMessage;
@@ -382,7 +401,7 @@ text-align: center;
   #addVoteButton {
     margin-left: 3.5rem;
   }
-  #singleArticleBody, .commentCard, .commentAdder, #addVoteButton, #submitButton {
+  #singleArticleBody, .commentCard, .commentAdder, #addVoteButton, #submitButton, #deleteCommentButton {
     font-size: 1.1rem;
   }
   .commentInputContainer {
@@ -397,14 +416,17 @@ text-align: center;
     grid-auto-rows: auto;
     gap: 10px;
   }
-  .header, #headerSingleArticle {
+  .header{
     font-size: 130%;
   }
-  #singleArticleBody, .commentCard, .commentAdder, #addVoteButton {
+  #headerSingleArticle {
+    font-size: 130%;
+    width: 95%;
+  }
+  #singleArticleBody, .commentCard, .commentAdder, #addVoteButton, #submitButton, #deleteCommentButton {
     font-size: 1.2rem;
   }
 }
-
 @media (min-width: 1460px) {
   #articleList {
     display: gird;

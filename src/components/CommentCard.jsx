@@ -40,7 +40,7 @@ export const CommentCard = ({author, created_at, body, votes, comment_id, setCom
         <li>
             <section className="commentCard">
                 <div className="topInfoCommentCard">
-                    <p className="authorCommentCard">{author}</p>
+                    <p className="authorCommentCard">{author}:</p>
                     <p className="createdAtCommentCard">{new Date(created_at).toLocaleDateString()}</p>
                 </div>
                 <p className="bodyCommentCard">{body}</p>
