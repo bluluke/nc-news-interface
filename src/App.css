@@ -20,6 +20,9 @@ body {
   margin: 1rem;
   font-size: 1.5rem;
 }
+#footer {
+  margin-bottom: 2rem;
+}
 
 #home {
   display: flex;
@@ -345,7 +348,6 @@ text-align: center;
     margin-left: 1.8rem;
   }
 }
- 
 @media (min-width: 590px) {
   .header, #headerSingleArticle  {
     font-size: 120%;
@@ -421,7 +423,6 @@ text-align: center;
     font-size: 1.2rem;
   }
 }
-
 @media (min-width: 1460px) {
   #articleList {
     display: gird;
