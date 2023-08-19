@@ -273,6 +273,7 @@ text-align: center;
     grid-area: commentCountArticleCard;
   }
   #topicInput {
+    border: 3px solid #000000;
     display: grid;
     padding: 1rem;
     grid-template-columns: 25% 25% 25% 25%;
