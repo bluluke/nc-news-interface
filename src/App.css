@@ -51,10 +51,22 @@ fieldset {
   margin-top: 1rem;
 }
 #searchSubmit {
+  color:#ffffff;
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 10%;
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 0.8rem;
   height: 2.5rem
+}
+#searchSubmit:hover {
+  background-color: #0056b3;
+  border-color:#0056b3;
+}
+#searchSubmit:active {
+  background-color: #000000;
+  border-color: #fff;
 }
 /*end of input styles */
 
