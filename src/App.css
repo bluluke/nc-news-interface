@@ -55,10 +55,11 @@ fieldset {
   background-color: #007bff;
   border-color: #007bff;
   border-radius: 10%;
-  margin-left: 10%;
+  margin-left: 24%;
   margin-right: 10%;
   margin-bottom: 0.8rem;
-  height: 2.5rem
+  height: 2.5rem;
+  width: 7rem;
 }
 #searchSubmit:hover {
   background-color: #0056b3;
@@ -295,7 +296,8 @@ text-align: center;
     grid-area: searchSubmit;
       margin-left: 10%;
       margin-top: 5%;
-      width: 10.7rem;
+      width: 9rem;
+      font-size: 1.2rem;
   }
 }
 @media (min-width: 460px) {
@@ -382,7 +384,7 @@ text-align: center;
   #addVoteButton {
     margin-left: 3.5rem;
   }
-  #singleArticleBody, .commentCard, .commentAdder, #addVoteButton, #submitButton {
+  #singleArticleBody, .commentCard, .commentAdder, #addVoteButton, #submitButton, #deleteCommentButton {
     font-size: 1.1rem;
   }
   .commentInputContainer {
@@ -400,7 +402,7 @@ text-align: center;
   .header, #headerSingleArticle {
     font-size: 130%;
   }
-  #singleArticleBody, .commentCard, .commentAdder, #addVoteButton {
+  #singleArticleBody, .commentCard, .commentAdder, #addVoteButton, #submitButton, #deleteCommentButton {
     font-size: 1.2rem;
   }
 }
