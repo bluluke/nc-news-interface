@@ -113,8 +113,9 @@ text-align: center;
 }
 #headerSingleArticle {
   font-size: 0.7rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1.7rem;
+  padding-right: 1.7rem;
+  width: 70%;
 }
 #addVoteButton, #deleteCommentButton, #submitButton {
   height: 2.2rem;
@@ -207,7 +208,11 @@ text-align: center;
   color: green;
 }
 /* end SingleArticle ids*/
-
+@media (min-width: 300px) {
+  #headerSingleArticle {
+    width:80%;
+  }
+}
 @media (min-width: 420px) {
   #singleArticleBody {
     display: flex;
@@ -304,6 +309,9 @@ text-align: center;
       width: 9rem;
       font-size: 1.2rem;
   }
+   #headerSingleArticle {
+      width:90%;
+    }
 }
 @media (min-width: 460px) {
   #addVoteButton {
@@ -407,6 +415,7 @@ text-align: center;
   }
   .header, #headerSingleArticle {
     font-size: 130%;
+    width: 95%;
   }
   #singleArticleBody, .commentCard, .commentAdder, #addVoteButton, #submitButton, #deleteCommentButton {
     font-size: 1.2rem;
