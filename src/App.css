@@ -3,6 +3,7 @@
   font-family: 'Fira Sans', sans-serif;
 }
 body {
+  border: 3px solid green;
   display: flex;
   justify-content: center;
   margin-left: 0;
@@ -415,7 +416,10 @@ text-align: center;
     grid-auto-rows: auto;
     gap: 10px;
   }
-  .header, #headerSingleArticle {
+  .header{
+    font-size: 130%;
+  }
+  #headerSingleArticle {
     font-size: 130%;
     width: 95%;
   }
