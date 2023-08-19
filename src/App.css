@@ -1,6 +1,6 @@
 
 * {
-  font-family: sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 }
 body {
   display: flex;
@@ -16,9 +16,9 @@ body {
 }
 
 #navbar, #footer{
-  /* display: flex; */
   text-align: center;
-  margin: 1rem
+  margin: 1rem;
+  font-size: 1.5rem;
 }
 
 #home {
@@ -51,10 +51,22 @@ fieldset {
   margin-top: 1rem;
 }
 #searchSubmit {
+  color:#ffffff;
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 10%;
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 0.8rem;
   height: 2.5rem
+}
+#searchSubmit:hover {
+  background-color: #0056b3;
+  border-color:#0056b3;
+}
+#searchSubmit:active {
+  background-color: #000000;
+  border-color: #fff;
 }
 /*end of input styles */
 
@@ -102,13 +114,28 @@ text-align: center;
   font-size: 0.7rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-
+}
+#addVoteButton, #deleteCommentButton, #submitButton {
+  height: 2.2rem;
 }
 #singleArticleBody {
-  padding: 2.5rem;
+  padding: 1rem;
   width: 70%;
   text-align: start;
   max-width: 1080px;
+}
+#articleTopInfo {
+  border-bottom: 3px solid orange;
+}
+#bodySingleArticle {
+  border-bottom: 5px double black;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+#articleBottomInfo {
+  border-bottom: 3px solid orange;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 #imageSingleArticle {
   width: 70%;
@@ -128,12 +155,40 @@ text-align: center;
   background-color: rgb(247, 247, 207);
   padding: 1.7rem;
 }
+#deleteCommentButton {
+  border-radius: 10%;
+  color: #ffffff;
+  background-color: #ff0000;
+  border-color: #ff0000;
+}
+#deleteCommentButton:hover {
+  background-color: #BB0000;
+  border-color: #BB0000;
+}
+#deleteCommentButton:active {
+  background-color: #000000;
+  border-color:#fff;
+}
 #commentInputContainer {
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
   margin-left: 1.1rem;
   width: 70%;
+}
+#submitButton, #addVoteButton {
+  border-radius: 10%;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+#submitButton:hover, #addVoteButton:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+#submitButton:active, #addVoteButton:active {
+  background-color: #000000;
+  border-color: #ffffff;
 }
 .toastBody {
   font-size: 1.5rem;
@@ -246,6 +301,9 @@ text-align: center;
 @media (min-width: 460px) {
   #addVoteButton {
     margin-left: 2rem;
+  }
+  #addVoteButton, #deleteCommentButton, #submitButton {
+    height: 2.5rem;
   }
 }
 @media (min-width: 500px) {

@@ -51,7 +51,7 @@ export const CommentCard = ({author, created_at, body, votes, comment_id, setCom
                     : null
                     }
                     {author === userForCommentDelete.user ? 
-                    <button value={comment_id} onClick={(handleDeleteClick)} disabled={isClicked===true}>Delete Comment</button> 
+                    <button id='deleteCommentButton' value={comment_id} onClick={(handleDeleteClick)} disabled={isClicked===true}>Delete Comment</button> 
                     : null}
                 </div>
             </section>

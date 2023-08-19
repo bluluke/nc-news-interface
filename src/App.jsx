@@ -1,4 +1,4 @@
-import {Route, Routes} from 'react-router-dom';
+import {Route, Routes, useLocation} from 'react-router-dom';
 import { useState} from 'react';
 import './App.css'
 import { Nav } from './components/Nav'
@@ -9,7 +9,8 @@ import { Error } from './components/Error';
 
 function App() {
   const [apiError, setApiError] = useState();
- 
+  const location = useLocation();
+
   if(apiError) {
     return (
         <Error
@@ -19,7 +20,7 @@ function App() {
 
   return (
     <>
-      <Nav />
+      {location.pathname !== '/' ? <Nav /> : null}
       <Routes>
         <Route path="/" element={<Home setApiError={setApiError}/>} />
         <Route path="/articles/:article_id" element={<SingleArticle setApiError={setApiError}/>} />
