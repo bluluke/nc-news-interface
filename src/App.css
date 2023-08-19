@@ -171,6 +171,9 @@ text-align: center;
   border-color:#fff;
 }
 #commentInputContainer {
+  border: 3px solid black;
+  color: black;
+  background-color: orange;
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
