@@ -1,8 +1,5 @@
 
 * {
-  /* margin-left: 0%;
-  padding-left: 0%;
-  font-size: 1em; */
   font-family: sans-serif;
 }
 body {
@@ -11,7 +8,6 @@ body {
   margin-left: 0;
   background-color: rgb(247, 247, 235);
   color: black;
-  border: 3px solid red;
   width: 100%;
 }
 .error {
@@ -26,7 +22,6 @@ body {
 }
 
 #home {
-  border: 3px solid blue;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,7 +37,6 @@ ul {
 #topicInput {
   display: flex;
   flex-direction: column;
-  border: 3px solid purple;
   background-color: orange;
   color: white;
 }
@@ -60,30 +54,15 @@ fieldset {
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: 0.8rem;
-  /* width: 5rem; */
   height: 2.5rem
 }
 /*end of input styles */
 
 
 /*Article List stylings: */
-#articleListContainer {
-  border: 3px solid pink;
-}
+
 #articleList {
-  border: 3px solid aquamarine;
   padding: 0;
-  /* display: flex;
-  flex-direction: column; */
-  /* margin: 0px; */
-  
-  /* align-items: flex-start; */
-   /* width: 100%;
-   display: flex;
-   flex-wrap: wrap; */
-   
-  /* display: grid;
-  grid-template-columns: repeat(1, 1fr);  */
 }
 #headingArticleList {
   margin-bottom: 0;
@@ -104,9 +83,6 @@ fieldset {
 .imageArticleCard {
    grid-area: imageArticleCard;
   width: 80%;
-
-  /* max-height: 158.8px;  */
-   /* max-width: 170px; */
    margin-top: 1.2rem;  
 }
 
@@ -120,32 +96,44 @@ fieldset {
   display: flex;
   flex-direction: column;
  align-items: center;
-
-border: 3px solid blue;
 text-align: center;
 }
 #headerSingleArticle {
-  /* width: 60%; */
+  font-size: 0.7rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
 }
 #singleArticleBody {
-  /* width: 60%; */
-  padding: 1.5rem;
+  padding: 2.5rem;
+  width: 70%;
+  text-align: start;
+  max-width: 1080px;
 }
 #imageSingleArticle {
-  width: 60%;
+  width: 70%;
+  max-width: 1030px;
+}
+#authorSingleArticle {
+  margin-top: 0;
 }
 #commentListContainer {
-  margin-right: 2rem;
+  margin-right: 2.8rem;
+  margin-left: 0rem;
+  width: 80%;
+  max-width: 900px;
 }
-#commentCard {
+.commentCard {
   border: 5px solid orange;
   background-color: rgb(247, 247, 207);
-  padding: 1.5rem;
+  padding: 1.7rem;
 }
 #commentInputContainer {
   display: flex;
   flex-direction: column;
-border: 3px solid salmon;
+  padding: 0.5rem;
+  margin-left: 1.1rem;
+  width: 70%;
 }
 .toastBody {
   font-size: 1.5rem;
@@ -160,39 +148,34 @@ border: 3px solid salmon;
 }
 /* end SingleArticle ids*/
 
+@media (min-width: 420px) {
+  #singleArticleBody {
+    display: flex;
+    flex-direction: column;
+  }
+  #articleTopInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #articleBottomInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #authorSingleArticle {
+    margin-top: 1rem;
+  }
+  #addVoteButton {
+    margin-left: 1rem;
+  }
 
-@media (min-width: 300px) {
-
-
-  /* .imageArticleCard {
-    height: 70%;
-  } */
-  /* .header {
-    font-size: 0.8rem;
-  } */
-  /* * {
-    margin-left: 2vw;
-  } */
-  /* #headerSingleArticle {
-    width: 80%;
-  } */
-  /* #singleArticleBody {
-    width: 80%;
-  } */
-  /* #imageSingleArticle {
-    width: 80%;
-  } */
-  /* #commentListContainer {
-    width: 80%;
-  } */
 }
-
-
 @media (min-width: 450px) {
   .articleCard {
     display: grid;
     grid-template-columns: 33.33% 33.33% 33.33%;
-    grid-template-rows: 16.66% 16.66% 16.66% 16.66% 16.66%;
+    grid-template-rows: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
     grid-template-areas: 'articleHeading articleHeading articleHeading'
                'authorArticleCard imageArticleCard imageArticleCard'
                'aboutArticleCard imageArticleCard imageArticleCard'
@@ -258,17 +241,96 @@ border: 3px solid salmon;
       margin-left: 10%;
       margin-top: 5%;
       width: 10.7rem;
-
   }
 }
-
 @media (min-width: 460px) {
-  * {
-    /* text-align: center; */
+  #addVoteButton {
+    margin-left: 2rem;
   }
 }
+@media (min-width: 500px) {
+  .commentCard {
+    display: flex;
+    flex-direction: column;
+  }
+  .topInfoCommentCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+  }
+  .bottomInfoCommentCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between
+  }
+}
+@media (min-width: 560px) {
+  #addVoteButton {
+    margin-left: 3rem;
+  }
+  #commentInputContainer {
+    margin-left: 1.8rem;
+  }
+}
+ 
+@media (min-width: 590px) {
+  .header, #headerSingleArticle  {
+    font-size: 120%;
+  }
+  #commentInputContainer {
+    padding: 2rem;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    margin-left: 0;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-areas: 'writeCommentMessage writeCommentMessage writeCommentMessage writeCommentMessage'
+                          'new-comment new-comment new-comment new-comment'
+                          'submitButtonContainer characterCountContainer characterCountContainer characterCountContainer';
+  }
+  #writeCommentMessage {
+    grid-area: writeCommentMessage;
+  }
+  #new-comment {
+    grid-area: new-comment;
+  }
+  #submitButtonContainer {
+    grid-area: submitButtonContainer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0.4rem;
+    height: 1.7rem;
+  }
+  #submitButton {
+    width: 5rem;
+    height: 1.7rem;
+  }
+  #characterCountContainer {
+    grid-area: characterCountContainer;
+     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end; 
+  }
+  #characterCountMessage {
+    grid-area: characterCountMessage;
+  }
 
-
+}
+@media (min-width: 860px) {
+  #addVoteButton {
+    margin-left: 3.5rem;
+  }
+  #singleArticleBody, .commentCard, .commentAdder, #addVoteButton, #submitButton {
+    font-size: 1.1rem;
+  }
+  .commentInputContainer {
+    margin-left: 2.2rem;
+  }
+}
 @media (min-width: 990px) {
 
   #articleList {
@@ -277,21 +339,13 @@ border: 3px solid salmon;
     grid-auto-rows: auto;
     gap: 10px;
   }
-  #headerSingleArticle {
-    /* width: 90%; */
+  .header, #headerSingleArticle {
+    font-size: 130%;
   }
-  #singleArticleBody {
-    /* width: 90%; */
-  }
-  #imageSingleArticle {
-    /* width: 90%; */
-  }
-  #commentListContainer {
-    /* width: 85%; */
+  #singleArticleBody, .commentCard, .commentAdder, #addVoteButton {
+    font-size: 1.2rem;
   }
 }
-
-
 
 @media (min-width: 1460px) {
   #articleList {

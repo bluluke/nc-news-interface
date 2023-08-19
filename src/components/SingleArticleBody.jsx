@@ -16,14 +16,17 @@ export const SingleArticleBody = ({author, created_at, body, votes, comment_coun
 
     return (
         <article id="singleArticleBody">
-            <p id="authorSingleArticle">By {author}</p>           
-            <p id="createdAtSingleArticle">{new Date(created_at).toLocaleDateString()}</p>
+            <div id='articleTopInfo'>
+                <p id="authorSingleArticle">By {author}</p>           
+                <p id="createdAtSingleArticle">{new Date(created_at).toLocaleDateString()}</p>
+            </div>
             <p id="bodySingleArticle">{body}</p>
-            <p id="votesSingleArticle">{userHasVoted && !isError ? votes + 1 : votes} votes</p>
-            <button onClick={handleAddClick} disabled={userHasVoted}>Add vote</button>
-            {isError ? <p>The vote was not successful.</p> : null}
-            <p id="commentCountSingleArticle">{comment_count} comments</p>        
-             
+            <div id='articleBottomInfo'>
+                <p id="votesSingleArticle">{userHasVoted && !isError ? votes + 1 : votes} votes</p>
+                <button id="addVoteButton" onClick={handleAddClick} disabled={userHasVoted}>Add vote</button>
+                {isError ? <p>The vote was not successful.</p> : null}
+                <p id="commentCountSingleArticle">{comment_count} comments</p>        
+            </div>
         </article>
         
     )

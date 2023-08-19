@@ -38,18 +38,22 @@ export const CommentCard = ({author, created_at, body, votes, comment_id, setCom
 
     return (
         <li>
-            <section id="commentCard">
-                <p id="authorCommentCard">{author}</p>
-                <p id="createdAtCommentCard">{new Date(created_at).toLocaleDateString()}</p>
-                <p id="bodyCommentCard">{body}</p>
-                <p id="votesCommentCard">{votes} votes</p>
-                {isClicked === true ?
-                <p>Comment delete in progress...</p>
-                : null
-                }
-                {author === userForCommentDelete.user ? 
-                <button value={comment_id} onClick={(handleDeleteClick)} disabled={isClicked===true}>Delete Comment</button> 
-                : null}
+            <section className="commentCard">
+                <div className="topInfoCommentCard">
+                    <p className="authorCommentCard">{author}</p>
+                    <p className="createdAtCommentCard">{new Date(created_at).toLocaleDateString()}</p>
+                </div>
+                <p className="bodyCommentCard">{body}</p>
+                <div className='bottomInfoCommentCard'>
+                    <p className="votesCommentCard">{votes} votes</p>
+                    {isClicked === true ?
+                    <p>Comment delete in progress...</p>
+                    : null
+                    }
+                    {author === userForCommentDelete.user ? 
+                    <button value={comment_id} onClick={(handleDeleteClick)} disabled={isClicked===true}>Delete Comment</button> 
+                    : null}
+                </div>
             </section>
         </li>
     )
