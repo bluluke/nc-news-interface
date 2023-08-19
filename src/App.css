@@ -14,7 +14,6 @@ body {
   font-size: 2.5rem;
   color: red;
 }
-
 #navbar, #footer{
   text-align: center;
   margin: 1rem;
@@ -23,7 +22,6 @@ body {
 #footer {
   margin-bottom: 2rem;
 }
-
 #home {
   display: flex;
   flex-direction: column;
@@ -102,11 +100,6 @@ fieldset {
    margin-top: 1.2rem;  
 }
 
-
-
-
-
-
 /* SingleArticle ids */
 #singleArticle {
   display: flex;
@@ -160,6 +153,13 @@ text-align: center;
   background-color: rgb(247, 247, 207);
   padding: 1.7rem;
   margin-bottom: 5px;;
+}
+.topInfoCommentCard {
+  border-bottom: 3px solid orange;
+}
+.bodyCommentCard{
+  border-bottom: 3px double black;
+  padding-bottom: 1rem;
 }
 #deleteCommentButton {
   border-radius: 10%;
